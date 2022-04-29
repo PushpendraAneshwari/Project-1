@@ -38,6 +38,11 @@ app.get("/contact", (req,res)=>{
     res.status(200).render('contact.pug', params);
 })
 
+app.get("/about", (req,res)=>{
+    const params = { }
+    res.render('about.pug', params);
+})
+
 app.post("/contact", (req,res)=>{
     var myData = new Contact(req.body);
     myData.save().then(()=>{
